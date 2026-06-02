@@ -1,0 +1,114 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    xmlns:mdc="sap.ui.mdc"
+    xmlns:form="sap.ui.layout.form"
+    displayBlock="true"
+    controllerName="br.com.klabin.zewmpicking2.controller.Details"
+    height="100%"
+>
+    <Page
+        xmlns="sap.m"
+        id="pageId"
+        title="{i18n>pickings}"
+        titleAlignment="Center"
+    >
+        <content>
+            <Table
+                noDataText="Não existem pickins novos"
+                id="table1"
+                items="{MDL_NewLotes>/}"
+            >
+                <items>
+                    <ColumnListItem
+                        id="item5"
+                        type="Navigation"
+                        press="onListItemPressRight"
+                    >
+                        <cells>
+                            <VBox
+                                width="100%"
+                                direction="Column"
+                                id="vbox0"
+                            >
+                                <items>
+                                    <VBox
+                                        width="100%"
+                                        direction="Column"
+                                        id="vbox0_1722813222794"
+                                        height="2em"
+                                    >
+                                        <HBox
+                                            id="_IDGenHBox1"
+                                            justifyContent="SpaceBetween"
+                                        >
+                                            <FormattedText
+                                                id="_IDGenFormattedText6"
+                                                htmlText="{i18n>strongIni}{i18n&gt;fornecimentoItemNew}{i18n>strongEnd} {MDL_NewLotes&gt;Vbeln} / {MDL_NewLotes>Posnv}"
+                                            />
+                                            <FormattedText
+                                                id="_IDGenFormattedText7"
+                                                htmlText="{i18n>hrefIni}{i18n>strongIni}{MDL_NewLotes>Number}{i18n>strongEnd}{i18n>hrefEnd}"
+                                            />
+                                            <items />
+                                        </HBox>
+                                    </VBox>
+                                    <VBox
+                                        height="1.5em"
+                                        id="vbox0_17228132227945"
+                                    >
+                                        <FormattedText
+                                            id="_IDGenFormattedText1"
+                                            htmlText="{i18n>strongIni}{i18n&gt;pedidoNew}{i18n>strongEnd} {MDL_HeaderDetailDetailRight&gt;/Pedido} / {MDL_HeaderDetailDetailRight>/PedidoItem}"
+                                        />
+                                    </VBox>
+                                    <VBox
+                                        height="1.5em"
+                                        id="vbox0_17228132227946"
+                                    >
+                                        <FormattedText
+                                            id="_IDGenFormattedText2"
+                                            htmlText="{i18n>strongIni}{i18n&gt;clienteNew}{i18n>strongEnd} {MDL_HeaderDetailDetailRight&gt;/Cliente}"
+                                        />
+                                    </VBox>
+                                    <VBox
+                                        height="1.5em"
+                                        id="vbox0_17228132227947"
+                                    >
+                                        <FormattedText
+                                            id="_IDGenFormattedText3"
+                                            htmlText="{i18n>strongIni}{i18n&gt;materialNew}{i18n>strongEnd} {MDL_HeaderDetailDetailRight&gt;/Material}"
+                                        />
+                                    </VBox>
+                                    <VBox
+                                        height="1.5em"
+                                        id="vbox0_17228132227948"
+                                    >
+                                        <FormattedText
+                                            id="_IDGenFormattedText4"
+                                            htmlText="{i18n>strongIni}{i18n&gt;qtdLotesNew}{i18n>strongEnd} {MDL_NewLotes&gt;Lote_Count}"
+                                        />
+                                    </VBox>
+                                    <VBox
+                                        height="1.5em"
+                                        id="vbox0_17228132227949"
+                                    >
+                                        <FormattedText
+                                            id="_IDGenFormattedText5"
+                                            htmlText="{i18n>strongIni}{i18n&gt;pesoFaltanteNew}{i18n>strongEnd} {MDL_NewLotes&gt;/Peso} {MDL_UnidadePesoBruto>/Und}"
+                                        />
+                                    </VBox>
+                                </items>
+                            </VBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+                <columns>
+                    <Column id="column0" />
+                </columns>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

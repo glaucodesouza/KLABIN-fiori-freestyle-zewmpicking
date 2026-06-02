@@ -1,0 +1,61 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    xmlns:mdc="sap.ui.mdc"
+    xmlns:form="sap.ui.layout.form"
+    displayBlock="true"
+    controllerName="br.com.klabin.zewmpicking2.controller.Details"
+    height="100%"
+>
+    <Page
+        xmlns="sap.m"
+        id="pageId"
+        title="{i18n>pickings}"
+    >
+        <content>
+            <List
+                noDataText=""
+                id="listRight"
+                items="{MDL_NewLotes>/}"
+            >
+                <items>
+                    <ObjectListItem
+                        type="Navigation"
+                        title="{i18n>fornecimentoItemNew}: {MDL_NewLotes>Vbeln} / {MDL_NewLotes>Posnv}"
+                        number="{MDL_NewLotes>Number}"
+                        intro=""
+                        id="item0_1721389655903"
+                        press="onListItemPressRight"
+                    >
+                        <attributes>
+                            <ObjectAttribute
+                                text="{i18n>pedidoNew} {MDL_HeaderDetailDetailRight&gt;/Pedido} / {MDL_HeaderDetailDetailRight>/PedidoItem}"
+                                id="attribute0"
+                            />
+                            <ObjectAttribute
+                                text="{i18n>clienteNew}: {MDL_HeaderDetailDetailRight>/Cliente}"
+                                id="attribute1"
+                            />
+                            <ObjectAttribute
+                                text="{i18n>materialNew} {MDL_HeaderDetailDetailRight&gt;/Material}"
+                                id="attribute2"
+                            />
+                            <ObjectAttribute
+                                text="{i18n>qtdLotesNew} {MDL_NewLotes&gt;Lote_Count}"
+                                id="attribute4"
+                            />
+                            <ObjectAttribute
+                                text="{i18n>pesoFaltanteNew} {MDL_NewLotes&gt;/Peso} {MDL_UnidadePesoBruto>/Und}"
+                                id="attribute6"
+                            />
+                        </attributes>
+                        <firstStatus />
+                        <secondStatus />
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

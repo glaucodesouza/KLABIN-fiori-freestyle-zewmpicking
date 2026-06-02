@@ -1,0 +1,208 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    xmlns:mdc="sap.ui.mdc"
+    xmlns:t="sap.ui.table"
+    xmlns:si="sap.suite.ui.commons.statusindicator"
+    xmlns:html="http://www.w3.org/1999/xhtml" controllerName="br.com.klabin.zewmpicking2.controller.Details" height="100%">
+    <html:style>
+        .SICursorStyle:hover {
+			cursor: pointer;
+		}
+		.SIBorderStyle {
+			border-left: 1px solid #cccccc;
+            border-right: 1px solid #cccccc;
+		}
+		.SIPanelStyle .sapMPanelContent{
+			overflow: visible;
+		}
+        .sapMfontsize{
+            font-size: 20px;   
+        }
+    </html:style>
+    <f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}" toggleHeaderOnTitleClick="{/titleClickable}" showFooter="true" fitContent="true" preserveHeaderStateOnScroll="true">
+        <!-- DynamicPage Title -->
+        <f:title>
+            <f:DynamicPageTitle id="_IDGenDynamicPageTitle1_D1">
+                <f:breadcrumbs />
+                <f:content>
+                    <OverflowToolbar id="_IDGenOverflowToolbar1" width="100%" height="100px">
+                        <content>
+                            <Title xmlns="sap.m" text="{i18n>carregamento}" id="title6" width="14%" class="sapUiContentPadding" />
+                            <!--
+                            <ProgressIndicator id="_IDGenProgressIndicator1" class="sapUiSmallMarginBottom" percentValue="{MDL_Carregamento>/Carregamento}" displayValue="{MDL_Carregamento>/Carregamento} %" showValue="true" state="None" width="20%"/>
+                            -->
+                            <!--Indicador de carregamento Imagem Shapes Caminhão - INI-->
+                            <FlexBox id="_IDGenFlexBox1" wrap="Wrap">
+                                <items>
+                                    <FlexBox id="_IDGenFlexBox2" direction="Column" class="sapUiTinyMargin SIBorderStyle">
+                                        <items>
+                                            <HBox width="100%" id="hbox0">
+                                                <si:StatusIndicator id="_IDGenStatusIndicator1" value="{MDL_Carregamento>/Carregamento}" width="250px" height="100px" class="sapUiTinyMargin SICursorStyle" press="onPressStatusIndicator">
+                                                    <si:propertyThresholds>
+                                                        <si:PropertyThreshold id="_IDGenPropertyThreshold1" fillColor="Error" toValue="25" />
+                                                        <si:PropertyThreshold id="_IDGenPropertyThreshold2" fillColor="Critical" toValue="60" />
+                                                        <si:PropertyThreshold id="_IDGenPropertyThreshold3" fillColor="Good" toValue="100" />
+                                                    </si:propertyThresholds>
+                                                    <si:ShapeGroup id="_IDGenShapeGroup1">
+                                                        <si:LibraryShape id="_IDGenLibraryShape1" shapeId="vehicle_truck_3" />
+                                                    </si:ShapeGroup>
+                                                </si:StatusIndicator>
+                                                <Label id="_IDGenLabel10" text="{MDL_Carregamento>/Carregamento}%" width="50px" textAlign="Center" class="sapUiTinyMargin" />
+                                                <items />
+                                            </HBox>
+                                        </items>
+                                    </FlexBox>
+                                </items>
+                            </FlexBox>
+                            <!--Indicador de carregamento Imagem Shapes Caminhão - FIM-->
+                            <layout:HorizontalLayout id="layout2">
+                                <layout:content>
+                                    <ObjectStatus id="_IDGenObjectStatus4" class="sapUiContentPadding" text="{MDL_Status>/Text}" active="false" inverted="true" state="{MDL_Status>/Status}" icon="{MDL_Status>/Icon}" visible="{= ${MDL_Status>/Visible} === 'true' ? true : false}" />
+                                </layout:content>
+                            </layout:HorizontalLayout>
+                        </content>
+                    </OverflowToolbar>
+                </f:content>
+            </f:DynamicPageTitle>
+        </f:title>
+        <!-- DynamicPage Header -->
+        <f:header>
+            <f:DynamicPageHeader id="_IDGenDynamicPageHeader1_D1" pinnable="true">
+                <f:content>
+                    <HBox width="100%" id="hbox2">
+                        <items>
+                            <VBox xmlns:mvc="sap.ui.core.mvc"
+                                xmlns:f="sap.f"
+                                xmlns:layout="sap.ui.layout"
+                                xmlns:sap.ui.layout.form="sap.ui.layout.form"
+                                xmlns:sap.ui.core="sap.ui.core"
+                                xmlns="sap.m" width="30%" direction="Column" id="vbox4" height="7em">
+                                <items>
+                                    <FormattedText id="_IDGenFormattedText1_D1" htmlText="{i18n>placaCC} {MDL_Header2&gt;/placaCC}" class="sapMfontsize" />
+                                    <FormattedText id="_IDGenFormattedText2_D2" htmlText="{i18n>payload} {MDL_Header2&gt;/payload}" class="sapMfontsize" />
+                                    <HBox id="HboxDetailsQtdBobinas">
+                                        <items>
+                                            <FormattedText id="_IDGenFormattedText3_D3" htmlText="{i18n>qtdBobinas} {MDL_QtdBobinas&gt;/Qtd}" class="sapMfontsize" />
+                                        </items>
+                                    </HBox>
+                                </items>
+                            </VBox>
+                            <VBox xmlns:mvc="sap.ui.core.mvc"
+                                xmlns="sap.m"
+                                xmlns:f="sap.f"
+                                xmlns:layout="sap.ui.layout"
+                                xmlns:sap.ui.layout.form="sap.ui.layout.form"
+                                xmlns:sap.ui.core="sap.ui.core" width="50%" direction="Column" id="vbox4_copy">
+                                <items>
+                                    <FormattedText id="_IDGenFormattedText7_D7" htmlText="{i18n>pesoBrutoTotal} {MDL_PesoBruto&gt;/PesoBruto} {MDL_UnidadePesoBruto>/Und}" class="sapMfontsize" />
+
+                                    <FormattedText id="_IDGenFormattedText5_D5" htmlText="{i18n>pesoLeitura} {MDL_PesoLeitura&gt;/PesoLeitura} {MDL_UnidadePesoBruto>/Und}" class="sapMfontsize" />
+                                </items>
+                            </VBox>
+                        </items>
+                    </HBox>
+                    <HBox width="100%" id="hbox3">
+                        <items>
+                            <HBox xmlns:mvc="sap.ui.core.mvc"
+                                xmlns:f="sap.f"
+                                xmlns:layout="sap.ui.layout"
+                                xmlns="sap.m" width="100%" id="hbox3_copy">
+                                <items>
+                                    <HBox xmlns:mvc="sap.ui.core.mvc"
+                                        xmlns="sap.m"
+                                        xmlns:f="sap.f"
+                                        xmlns:layout="sap.ui.layout" width="60%" id="hbox1_1721047260184">
+                                        <items>
+                                            <VBox xmlns:mvc="sap.ui.core.mvc"
+                                                xmlns:f="sap.f"
+                                                xmlns:layout="sap.ui.layout"
+                                                xmlns:sap.ui.layout.form="sap.ui.layout.form"
+                                                xmlns:sap.ui.core="sap.ui.core"
+                                                xmlns="sap.m" width="30%" direction="Column" id="vbox3_copy">
+                                                <items>
+                                                    <FormattedText id="_IDGenFormattedText6_D6" htmlText="{i18n>loteInp}" />
+                                                    <Input xmlns:mvc="sap.ui.core.mvc"
+                                                        xmlns:f="sap.f"
+                                                        xmlns:layout="sap.ui.layout"
+                                                        xmlns:sap.ui.layout.form="sap.ui.layout.form"
+                                                        xmlns:sap.ui.core="sap.ui.core"
+                                                        xmlns="sap.m" id="LoteInput" width="80%" editable="{= ${MDL_SetEnableLote>/flag} === 'true' ? true : false}" valueLiveUpdate="true" liveChange=".onLiveChange" class="sapMfontsize" />
+                                                </items>
+                                            </VBox>
+                                        </items>
+                                    </HBox>
+                                </items>
+                            </HBox>
+                        </items>
+                    </HBox>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+
+        <f:content>
+            <t:Table id="_IDTabPositions" rows="{        path: 'MDL_Posicoes>/'    }" selectionMode="None" rowMode="Auto">
+                <t:extension>
+                    <OverflowToolbar id="_IDGenOverflowToolbar3" style="Clear">
+                        <Title id="_IDGenTitle1" text="{i18n>posicoesTabTitle}" />
+                    </OverflowToolbar>
+                </t:extension>
+                <t:columns>
+                    <t:Column id="_IDGenColumn1" width="9rem">
+                        <Label id="_IDGenLabel1" text="{i18n>posicaoCol}" />
+                        <t:template>
+                            <Text id="_IDGenText1" text="{MDL_Posicoes>Lgpla}" wrapping="false" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column id="_IDGenColumn2" width="7rem">
+                        <Label id="_IDGenLabel2" text="{i18n>quantidadeCol}" />
+                        <t:template>
+                            <Text id="_IDGenText2" text="{MDL_Posicoes>Charg}" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column id="_IDGenColumn3" width="8rem" hAlign="Begin">
+                        <Label id="_IDGenLabel3" text="{i18n>fornecimentoCol}" />
+                        <t:template>
+                            <Label id="_IDGenLabel4" text="{MDL_Posicoes>VbelnR}" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column id="_IDGenColumn4" width="7rem">
+                        <Label id="_IDGenLabel5" text="{i18n>pesoReqCol}" />
+                        <t:template>
+                            <Label id="_IDGenLabel6" text="{MDL_Posicoes>lfimg} {MDL_Posicoes&gt;vrkme}" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column id="_IDGenColumn5" width="20rem">
+                        <Text id="_IDGenLabel7" text="{i18n>infCarregaCol}" wrapping="true" />
+                        <t:template>
+                            <Label id="_IDGenLabel8" text="{MDL_Posicoes>ResultPck}" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column id="_IDGenColumn6" width="4rem">
+                        <Label id="_IDGenLabel9" text="{i18n>lotesCol}" />
+                        <t:template>
+                            <Button xmlns="sap.m" id="button0" icon="sap-icon://sap-box" press="onListItemPress" />
+                        </t:template>
+                    </t:Column>
+                </t:columns>
+            </t:Table>
+        </f:content>
+        <!-- DynamicPage Footer -->
+        <f:footer>
+            <OverflowToolbar id="_IDGenOverflowToolbar2" visible="true" active="true">
+                <Button id="_IDGenButton1" icon="sap-icon://message-popup" text="Footer" type="Emphasized" press="onMessageButtonPress" visible="false">
+                    <layoutData>
+                        <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData1" priority="NeverOverflow" />
+                    </layoutData>
+                </Button>
+                <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                <Button id="_IDGenButton2" type="Emphasized" text="{i18n>btnFinalizarPicking}" press="onFinalizarPicking" enabled="{= ${MDL_SetEnableLoteFinalizarPicking>/flag} === 'true' ? true : false}">
+                    <layoutData>
+                        <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData2" priority="NeverOverflow" />
+                    </layoutData>
+                </Button>
+            </OverflowToolbar>
+        </f:footer>
+    </f:DynamicPage>
+</mvc:View>

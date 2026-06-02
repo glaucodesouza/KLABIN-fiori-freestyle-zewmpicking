@@ -1,0 +1,64 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    controllerName="br.com.klabin.zewmpicking2.controller.Details"
+>
+    <Dialog
+        id="DialogFinalizarPickingID"
+        contentWidth="25em"
+        title="{i18n>finPckTitle}"
+        titleAlignment="Start"
+    >
+        <content>
+            <sap.ui.layout.form:SimpleForm
+                xmlns:sap.ui.layout.form="sap.ui.layout.form"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                id="form0FinalizarPicking"
+            >
+                <sap.ui.layout.form:content>
+                    <VBox
+                        width="100%"
+                        direction="Column"
+                        id="vbox0FinalizarPicking"
+                    >
+                        <items>
+                            <Label
+                                text="{i18n>finPckText}"
+                                width="100%"
+                                id="label2FinalizarPicking"
+                            />
+
+                            <Input
+                                xmlns="sap.m"
+                                id="inputQtdBobinasContraPicking"
+                            />
+                        </items>
+                    </VBox>
+                </sap.ui.layout.form:content>
+            </sap.ui.layout.form:SimpleForm>
+        </content>
+
+        <beginButton>
+            <Button
+                xmlns="sap.m"
+                text="{i18n>finPckConfirmar}"
+                id="buttonConfirmFinalizar"
+                type="Emphasized"
+                activeIcon="sap-icon://save"
+                press="onCheckFinalizarPicking"
+            />
+        </beginButton>
+
+        <endButton>
+            <Button
+                xmlns="sap.m"
+                text="{i18n>finPckFechar}"
+                id="buttonFecharPickingFrag"
+                type="Reject"
+                activeIcon="sap-icon://sys-cancel-2"
+                press="onCloseFinalizarPickingFrag"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

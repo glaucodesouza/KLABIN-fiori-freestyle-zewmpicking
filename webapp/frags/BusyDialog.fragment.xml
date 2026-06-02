@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    controllerName="br.com.klabin.zewmpicking2.controller.Details"
+>
+    <BusyDialog
+        id="BusyDialogID"
+        title="{i18n>busyDialogTitlePicking}"
+        titleAlignment="Center"
+        text="{i18n>busyDialogTextPicking}"
+        showCancelButton="false"
+        close="onDialogClosed"
+    />
+</core:FragmentDefinition>

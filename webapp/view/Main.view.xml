@@ -1,0 +1,63 @@
+<mvc:View 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:core="sap.ui.core" 
+xmlns:m="sap.m" 
+xmlns:f="sap.f" 
+xmlns:fb="sap.ui.comp.filterbar" 
+xmlns:svm="sap.ui.comp.smartvariants" 
+height="100%" 
+xmlns:smartTable="sap.ui.comp.smarttable"
+xmlns:smfb="sap.ui.comp.smartfilterbar"
+xmlns:table="sap.ui.table"
+xmlns:html="http://www.w3.org/1999/xhtml"
+xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+controllerName="br.com.klabin.zewmpicking2.controller.Main">
+    <f:DynamicPage id="_IDGenDynamicPage1" headerExpanded="{/headerExpanded}">
+        <f:header>
+            <f:DynamicPageHeader id="_IDGenDynamicPageHeader1">
+                <f:content>
+                    <smfb:SmartFilterBar id="smartFilterBar"
+                        entitySet="TicketTransp" persistencyKey="SmartFilter_Explored">
+                        <smfb:controlConfiguration>
+                            <smfb:ControlConfiguration key="nuofe" visibleInAdvancedArea="true"/>
+                            <smfb:ControlConfiguration key="ticket" visibleInAdvancedArea="true"/>
+                            <smfb:ControlConfiguration key="placa" visibleInAdvancedArea="true"/>
+                            <smfb:ControlConfiguration key="placa02" visibleInAdvancedArea="true"/>
+                            <smfb:ControlConfiguration key="lifnr" visibleInAdvancedArea="true"/>
+                        </smfb:controlConfiguration>
+					<smfb:layoutData>
+						<m:FlexItemData shrinkFactor="0"/>
+					</smfb:layoutData>
+                    </smfb:SmartFilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+        <smartTable:SmartTable 
+            id="smartTable" 
+            entitySet="TicketTransp" 
+            tableType="Table"
+            smartFilterId="smartFilterBar"
+            beforeExport="onBeforeExport"
+            useVariantManagement="true" 
+            useTablePersonalisation="true" 
+            header="Picking" 
+            showRowCount="true" 
+            persistencyKey="SmartTableAnalytical_TicketTransp" 
+            enableAutoBinding="true" 
+            class="sapUiResponsiveContentPadding" 
+            enableAutoColumnWidth="true" 
+            editTogglable="false" 
+            initiallyVisibleFields="nuofe,ticket,placa,placa02,lifnr,tara,cntai,nlacr,payload,StatusCarregamento,ApresObs,LibObs,vstel,bukrs,codStatus"           
+            app:useSmartToggle="true">
+                <m:Table 
+                    alternateRowColors="true" 
+                    selectionChange="onListItemPress"  
+                    itemPress="onListItemPress" 
+                    mode="SingleSelectMaster" 
+                    sticky="ColumnHeaders"/>
+			</smartTable:SmartTable>
+        </f:content>
+    </f:DynamicPage>
+
+</mvc:View>

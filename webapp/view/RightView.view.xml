@@ -1,0 +1,129 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    controllerName="br.com.klabin.zewmpicking2.controller.Details"
+>
+    <Table
+        id="idProductsTable"
+        inset="false"
+        items="{    path: '/NewLotes',    sorter: {     path: 'Name'    }   }"
+    >
+        <columns>
+            <Column
+                id="_IDGenColumn1"
+                width="25em"
+            >
+                <Text id="_IDGenText1" />
+            </Column>
+            <Column
+                id="_IDGenColumn2"
+                minScreenWidth="Tablet"
+                demandPopin="true"
+            >
+                <Text id="_IDGenText2" />
+            </Column>
+            <Column
+                id="_IDGenColumn3"
+                minScreenWidth="Desktop"
+                demandPopin="true"
+                hAlign="End"
+            >
+                <Text id="_IDGenText3" />
+            </Column>
+            <Column
+                id="_IDGenColumn4"
+                minScreenWidth="Desktop"
+                demandPopin="true"
+                hAlign="Center"
+            >
+                <Text id="_IDGenText4" />
+            </Column>
+            <Column
+                xmlns:mvc="sap.ui.core.mvc"
+                xmlns:core="sap.ui.core"
+                xmlns="sap.m"
+                minScreenWidth="Desktop"
+                demandPopin="true"
+                hAlign="Center"
+                id="column6"
+            >
+                <Text
+                    id="_IDGenText5"
+                    text="Weight"
+                />
+            </Column>
+            <Column
+                xmlns:mvc="sap.ui.core.mvc"
+                xmlns:core="sap.ui.core"
+                xmlns="sap.m"
+                minScreenWidth="Desktop"
+                demandPopin="true"
+                hAlign="Center"
+                id="column6_copy"
+            >
+                <Text
+                    id="_IDGenText6"
+                    text="Weight"
+                />
+            </Column>
+            <Column
+                xmlns:mvc="sap.ui.core.mvc"
+                xmlns:core="sap.ui.core"
+                xmlns="sap.m"
+                minScreenWidth="Desktop"
+                demandPopin="true"
+                hAlign="Center"
+                id="column6_copy2"
+            >
+                <Text
+                    id="_IDGenText7"
+                    text="Weight"
+                />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem
+                id="_IDGenColumnListItem1"
+                vAlign="Middle"
+            >
+                <cells>
+                    <ObjectIdentifier
+                        id="_IDGenObjectIdentifier1"
+                        title="Fornecimento/Item: {MDL_HeaderDetailDetail>/Fornecimento} / {MDL_HeaderDetailDetail>/FornecimentoItem}"
+                    />
+                    <Text id="_IDGenText8" />
+                    <Text
+                        id="_IDGenText9"
+                        text="Pedido: {MDL_HeaderDetailDetail>/Pedido} / {MDL_HeaderDetailDetail>/PedidoItem}"
+                    />
+                    <ObjectNumber
+                        id="_IDGenObjectNumber1"
+                        number="Cliente: "
+                        unit="{MDL_HeaderDetailDetail&amp;gt;/Cliente}"
+                    />
+                    <ObjectNumber
+                        id="_IDGenObjectNumber2"
+                        number="Material"
+                        unit="{MDL_HeaderDetailDetail&amp;gt;/Material}"
+                    />
+                    <ObjectNumber
+                        xmlns:mvc="sap.ui.core.mvc"
+                        xmlns:core="sap.ui.core"
+                        xmlns="sap.m"
+                        number="Quantidade de Lotes:"
+                        unit="{MDL_HeaderDetailDetail&amp;gt;/Qtd}"
+                        id="number2"
+                    />
+                    <Button
+                        xmlns="sap.m"
+                        text="Lotes"
+                        id="button0Test"
+                        icon="sap-icon://sap-box"
+                        type="Emphasized"
+                    />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</mvc:View>

@@ -1,0 +1,169 @@
+{
+    "_version": "1.59.0",
+    "sap.app": {
+        "id": "br.com.klabin.zewmpicking2",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.14.1",
+            "toolsId": "2cc1bc1a-1783-43db-8c3c-017b6c55f18b"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/Z_UI_TICKET_TRANSP/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [
+                        "mainService_Annotation"
+                    ],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            },
+            "mainService_Annotation": {
+                "uri": "/destinations/S4D140/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='Z_UI_TICKET_TRANSP_VAN',Version='0001')/$value/",
+                "type": "ODataAnnotation",
+                "settings": {
+                    "localUri": "localService/mainService_Annotation.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "fullWidth": true
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.120.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {},
+                "sap.ui.fl": {},
+                "sap.ui.mdc": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "br.com.klabin.zewmpicking2.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "type": "View",
+                "async": true,
+                "viewPath": "br.com.klabin.zewmpicking2.view",
+                "controlId": "fcl",
+                "transition": "slide"
+            },
+            "routes": [
+                {
+                    "pattern": ":layout:",
+                    "name": "list",
+                    "target": [
+                        "list"
+                    ]
+                },
+                {
+                    "pattern": "detail/{category}/{one}/{payload}/{placaCC}/{status}/{vstel}/{ticket}/{bukrs}/{cstatus}/{layout}",
+                    "name": "detail",
+                    "target": [
+                        "detail"
+                    ]
+                },
+                {
+                    "pattern": "detailDetail/{category}/{Key1}/{Key2}/{layout}/{supplier}",
+                    "name": "detailDetail",
+                    "target": [
+                        "detail",
+                        "detailDetail"
+                    ]
+                },
+                {
+                    "pattern": "detailDetailDetail/{category}/{Key1}/{Key2}/{layout}",
+                    "name": "detailDetailDetail",
+                    "target": [
+                        "detail",
+                        "detailDetailDetail"
+                    ]
+                }
+            ],
+            "targets": {
+                "list": {
+                    "viewId": "ListF",
+                    "viewName": "Main",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "detail": {
+                    "viewId": "DetailsF",
+                    "viewName": "Details",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "detailDetail": {
+                    "viewId": "DetailDetailF",
+                    "viewName": "DetailDetail",
+                    "controlAggregation": "midColumnPages"
+                },
+                "detailDetailDetail": {
+                    "viewId": "DetailDetailDetailF",
+                    "viewName": "DetailDetailDetail",
+                    "controlAggregation": "endColumnPages"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "br.com.klabin.zewmpicking2.view.FlexibleLayoutColumn",
+            "type": "XML",
+            "async": true,
+            "id": "fcl"
+        }
+    }
+}

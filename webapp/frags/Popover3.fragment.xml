@@ -1,0 +1,127 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    controllerName="br.com.klabin.zewmpicking2.controller.Details"
+>
+    <Dialog
+        id="DialogPopover3ID"
+        contentWidth="25em"
+        title="{i18n>picking}"
+        titleAlignment="Center"
+    >
+        <content>
+            <sap.ui.layout.form:SimpleForm
+                xmlns:sap.ui.layout.form="sap.ui.layout.form"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                id="form0Pp3"
+                width="100%"
+            >
+                <sap.ui.layout.form:content>
+                    <VBox
+                        width="100%"
+                        direction="Column"
+                        id="vbox0Popover3"
+                    >
+                        <items>
+                            <sap.ui.layout.form:SimpleForm
+                                xmlns="sap.m"
+                                xmlns:core="sap.ui.core"
+                                xmlns:sap.ui.layout.form="sap.ui.layout.form"
+                                editable="true"
+                                layout="ResponsiveGridLayout"
+                                id="form0_1721318296100"
+                            >
+                                <sap.ui.layout.form:content>
+                                    <VBox
+                                        width="100%"
+                                        direction="Column"
+                                        id="vbox1Popover3"
+                                    >
+                                        <items>
+                                            <FormattedText
+                                                id="_IDGenFormattedText7Pp3"
+                                                htmlText="{i18n>fornecimentoItem} {MDL_LotesFornListForn&gt;/Vbeln} / {MDL_LotesFornListForn>/Posnv}"
+                                            />
+                                            <FormattedText
+                                                id="_IDGenFormattedText8Pp3"
+                                                htmlText="{i18n>pedido} {MDL_HeaderDetailDetailRight&gt;/Pedido} / {MDL_HeaderDetailDetailRight>/PedidoItem}"
+                                            />
+                                            <FormattedText
+                                                id="_IDGenFormattedText9Pp3"
+                                                htmlText="{i18n>cliente} {MDL_HeaderDetailDetailRight&gt;/Cliente}"
+                                            />
+                                            <FormattedText
+                                                id="_IDGenFormattedText10Pp3"
+                                                htmlText="{i18n>material} {MDL_HeaderDetailDetailRight&gt;/Material}"
+                                            />
+                                        </items>
+                                    </VBox>
+                                </sap.ui.layout.form:content>
+                            </sap.ui.layout.form:SimpleForm>
+                            <Toolbar
+                                width="100%"
+                                id="toolbar1"
+                            >
+                                <content>
+                                    <Title
+                                        xmlns="sap.m"
+                                        text="{MDL_Qtd_s>/Qtd} {i18n&gt;lotesLow}{MDL_Qtd_s>/s}"
+                                        id="title0"
+                                    />
+                                </content>
+                            </Toolbar>
+
+                            <VBox
+                                width="100%"
+                                direction="Column"
+                                id="vbox0_1721318165816Pp3"
+                            > 
+                                <Table
+                                    noDataText="{i18n>NothingLotes}"
+                                    mode="Delete"
+                                    delete="onDelLotes"
+                                    id="MDL_LotesTable"
+                                    items="{path: 'MDL_LotesFornList>/'}"
+                                >
+                                    <items>
+                                        <ColumnListItem
+                                            type="Active"
+                                            id="item1_copy_table1Popoverr_0_copy_table1Popoverr_0Pp3"
+                                        >
+                                            <cells>
+                                                <Text
+                                                    text="{MDL_LotesFornList>Lote}"
+                                                    id="text4_copy_table1Popoverr_0_copy_table1Popoverr_0Pp3"
+                                                />
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+
+                                    <columns>
+                                        <Column id="column0ppPp3" />
+                                        <Column
+                                            id="column0ppPp3Button"
+                                            hAlign="End"
+                                        />
+                                    </columns>
+                                </Table>
+                            </VBox>
+                        </items>
+                    </VBox>
+                </sap.ui.layout.form:content>
+            </sap.ui.layout.form:SimpleForm>
+        </content>
+        <endButton>
+            <Button
+                xmlns="sap.m"
+                id="BtnSairPopover3"
+                activeIcon="sap-icon://sys-cancel-2"
+                icon="sap-icon://decline"
+                press="onClosePopover3"
+                type="Reject"
+                text="Fechar"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
